@@ -18,8 +18,8 @@ export async function getPlaceAutocomplete(key: string, address: string) {
   return autocomplete.data.results.map(({ id, address }: Result) => {
     return {
       placeId: id,
-      streetNumber: address.streetNumber,
       streetName: address.streetName,
+      streetNumber: address.streetNumber,
       municipality: address.municipality,
       country: address.country,
       countryCode: address.countryCode,
