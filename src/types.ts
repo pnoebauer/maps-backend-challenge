@@ -1,4 +1,3 @@
-// src/types.ts
 export interface FuzzySearchParams {
   key: string;
   query?: string;
@@ -54,22 +53,31 @@ interface QueryIntent {
   details: { [key: string]: unknown };
 }
 
-interface Address {
-  streetNumber?: string;
-  streetName?: string;
-  municipality?: string;
-  country?: string;
-  countryCode?: string;
-  freeformAddress?: string;
+interface PartialAddress {
+  streetNumber: string;
+  streetName: string;
+  municipality: string;
+  country: string;
+  countryCode: string;
+  freeformAddress: string;
 }
 
-export interface Result {
+export interface PartialResult {
   id: string;
-  address: Address;
+  address: PartialAddress;
 }
 
 export interface FuzzySearchResponse {
   summary: Summary;
-  results: Result[];
-  // results: object[];
+  results: PartialResult[];
+}
+
+export interface AutocompleteResult {
+  placeId: string;
+  streetName: string;
+  streetNumber: string;
+  municipality: string;
+  country: string;
+  countryCode: string;
+  freeformAddress: string;
 }
